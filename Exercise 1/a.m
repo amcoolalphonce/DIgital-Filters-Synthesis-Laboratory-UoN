@@ -13,3 +13,4 @@ T = 1;
 H1z = tf(num_z, denom_z, T)
 
 figure;
+zplane(num_z, denom_z);
