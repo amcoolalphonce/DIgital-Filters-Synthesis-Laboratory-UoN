@@ -14,3 +14,4 @@ H1z = tf(num_z, denom_z, T)
 
 figure;
 zplane(num_z, denom_z);
+title('Poles and Zeros of H1(z)');
