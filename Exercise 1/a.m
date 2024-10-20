@@ -11,3 +11,5 @@ T = 1;
 [num_z, denom_z] = impinvar(num_s, denom_s, 1/T);
 
 H1z = tf(num_z, denom_z, T)
+
+figure;
