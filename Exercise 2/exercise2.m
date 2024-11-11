@@ -28,3 +28,13 @@ options.Grid = 'on';
 figure;
 bode(hs, options);
 title('Frequency Response of Analog Butterworth Filter');
+
+% PART C: BILINEAR DIGITAL FILTER
+% Coverting the analog filter to a digital filter using bilinear
+% transformation
+[hz_num, hz_denom] = bilinear(hs_num, hs_denom, sampling_frequency);
+%hz = tf(hz_num, hz_denom,1/sampling_frequency);
+
+% Get the digitl flters order
+digital_filter_order = filtord(hz_num, hz_denom)
+
