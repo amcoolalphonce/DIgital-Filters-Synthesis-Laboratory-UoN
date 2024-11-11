@@ -75,3 +75,14 @@ ylabel('Phase (degrees)');
 grid on;
 pbaspect([2 1 1]);
 hold off;
+
+
+function w_c = passband_spec_w_c(passband_frequency_radians,passband_attenuationdB,filter_order)
+    % function that calculates teh cuttoff frequency w_c for a Butterworth Filter
+
+ % Convert passband attenuation from dB to linear scale
+ attenuation_linear = 10^(passband_attenuationdB / 10) - 1;
+  
+ % Calculate the cutoff frequency using the Butterworth formula
+ w_c = passband_frequency_radians/(attenuation_linear^(1/(2*filter_order)));
+end
