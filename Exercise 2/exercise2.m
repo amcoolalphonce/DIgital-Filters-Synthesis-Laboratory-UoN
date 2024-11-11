@@ -48,3 +48,17 @@ title('FREQUENCY RESPONSE OF A DIGITAL BUTTERWORTH FILTER');
 % get frequency responses for the analog nd digital filters
 [hz_o, wz_o] = freqs(hs_num, hs_denom, (0:(2*pi*sampling_frequency/100):(2*pi*sampling_frequency/2)));
 [hz, wz] = freqz(hz_num, hz_denom, 512, sampling_frequency);
+
+% Plot magnitude responses of both filters
+
+figure;
+plot(wz_o/(2*pi), 20*log10(abs(hz_o)), 'b', 'DisplayName', 'Analog');
+hold on;
+plot(wz, 20*log10(abs(hz)), 'r', 'DisplayName', 'Digital');
+title('Magnitude Responses of Analog and Digital Butterworth Filters');
+legend('Analog', 'Digital');
+xlabel('Frequency (Hz)');
+ylabel('Magnitude (dB)');
+grid on;
+pbaspect([2 1 1]);
+hold off;
