@@ -62,3 +62,16 @@ ylabel('Magnitude (dB)');
 grid on;
 pbaspect([2 1 1]);
 hold off;
+
+% plot the phase responses of both filters
+figure;
+plot(wz_o/(2*pi), unwrap(angle(hz_o)) * 180/pi, 'r', 'DisplayName', 'Analog');
+hold on;
+plot(wz, unwrap(angle(hz)) * 180/pi, 'g', 'DisplayName', 'Digital');
+title('PHASE RESPONSES OF ANALOG AND DIGITAL BUTTERWORTH FILTERS');
+legend('Analog', 'Digital');
+xlabel('Frequency (Hz)');
+ylabel('Phase (degrees)');
+grid on;
+pbaspect([2 1 1]);
+hold off;
