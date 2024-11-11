@@ -38,3 +38,13 @@ title('Frequency Response of Analog Butterworth Filter');
 % Get the digitl flters order
 digital_filter_order = filtord(hz_num, hz_denom)
 
+% PART D:  FREQUENCY RESPONSES
+% Plotting the frequency responses of the digital filter
+figure;
+freqz(hz_num, hz_denom, 512, sampling_frequency);
+title('FREQUENCY RESPONSE OF A DIGITAL BUTTERWORTH FILTER');
+
+%Frequency response Comparison: Analog Vs Digital filters
+% get frequency responses for the analog nd digital filters
+[hz_o, wz_o] = freqs(hs_num, hs_denom, (0:(2*pi*sampling_frequency/100):(2*pi*sampling_frequency/2)));
+[hz, wz] = freqz(hz_num, hz_denom, 512, sampling_frequency);
